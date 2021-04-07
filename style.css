@@ -2,6 +2,16 @@
     box-sizing: border-box;
 }
 
+:root {
+  --green-color: rgb(27, 185, 61);
+  --orange-color: rgb(238, 162, 20);
+  --blue-color: rgb(66, 151, 231);
+  --darkgreen-color:#23424a;
+  --tealcgreen-color: #38cfd9;
+  --smokewhite-color:  rgb(238, 235, 235);
+
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -12,6 +22,18 @@ h1 {
     font-size: 3rem;
 }
 
+.green {
+    color:rgb(27, 185, 61)
+}
+
+.orange {
+    color: rgb(218, 152, 30);
+}
+
+.blue {
+    color: rgb(66, 151, 231);
+}
+
 .container {
     width: 80%;
     max-width: 1200px;
@@ -20,6 +42,8 @@ h1 {
 
 .container-bottom {
     background:  #38cfd9;
+    color:   #23424a;
+    width: 100%;
 }
 
 .row {
@@ -31,14 +55,14 @@ h1 {
     text-align: center;
     border-radius: 1rem;
     box-shadow: 0 5px 5px 0 grey ;
-    margin: 50px;
+    margin: 100px 50px;
+    padding: 1em;
     width: 100%;
 }
 
 .col-bottom {
     text-align: center;
-    margin: 50px;
-    width: 100%;
+    padding: 3em 2em;
 }
 
 .hero {
