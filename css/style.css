@@ -9,7 +9,6 @@
   --darkgreen-color:#23424a;
   --tealcgreen-color: #38cfd9;
   --smokewhite-color:  rgb(238, 235, 235);
-
 }
 
 body {
@@ -18,8 +17,14 @@ body {
     font-size: 1.3rem;
 }
 
+img {
+    max-width: 100%;
+}
+
 h1 {
     font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
 }
 
 .green {
@@ -35,48 +40,57 @@ h1 {
 }
 
 .container {
+    display: flex;
     width: 80%;
     max-width: 1200px;
-    margin: 0 auto;
-}
-
-.container-bottom {
-    background:  #38cfd9;
-    color:   #23424a;
-    width: 100%;
+    margin: 3rem auto;
 }
 
 .row {
     display: flex;
 }
 
-.col {
-    background: rgb(238, 235, 235);
+.ruta-1 {
+    text-align: left;
+    color: #23424a;
+    padding: 1.5rem;
+    margin: 3rem;
+}
+
+.ruta-2 {
     text-align: center;
-    border-radius: 1rem;
-    box-shadow: 0 5px 5px 0 grey ;
-    margin: 100px 50px;
-    padding: 1em;
+    background: #38cfd9;
+    color: #23424a;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 3rem;
+}
+
+.col {
     width: 100%;
 }
 
-.col-bottom {
-    text-align: center;
-    padding: 3em 2em;
+.col + .col {
+    margin-left: 2rem;
 }
 
 .hero {
-    padding: 100px 0;
+    padding: 5rem;
     background-color: #23424a;
     color: white;
 }
 
-.hero p {
-    margin-bottom: 3em;
+.hero__text {
+    width: 60%;
 }
 
-.hero__text {
-    width: 50%;
+.hero__img {
+    align-self: flex-start;
+    width: 40%;
+}
+
+.hero p {
+    margin-bottom: 7em;
 }
 
 .btn {
@@ -88,6 +102,7 @@ h1 {
     background-color: #38cfd9;
     padding: .75em 2em;
     border-radius: 100px;
+    margin-bottom: 0;
 }
 
 .btn:hover {
@@ -99,3 +114,4 @@ h1 {
     0 0 0 5px #23424a,
     0 0 0 10px  #38cfd9;
 }
+
