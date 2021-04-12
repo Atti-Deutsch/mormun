@@ -63,7 +63,11 @@ header {
 
 .logo {
     margin-right: 1em;
+    width: 10%;
+    max-width: 100%;
+    height: auto;
 }
+
 
 .nav {
     display: flex;
@@ -79,6 +83,10 @@ header {
     display: flex;
     align-items: center;
     font-size: .9rem;
+}
+
+.nav__list--primary {
+    margin: 0 auto;
 }
 
 .nav__item + .nav__item {
@@ -102,9 +110,10 @@ header {
     display: flex;
     width: 80%;
     max-width: 1600px;
-    margin: 3em auto;
+    margin: 2em auto;
     border: 3px solid white;
 }
+
 
 .row {
     display: flex;
