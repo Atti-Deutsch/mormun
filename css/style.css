@@ -58,16 +58,15 @@ h2 {
 
 header {
     background-color: var(--tealcgreen-color);
-    padding: 2em 0;
+    padding: 1em 0;
 }
 
 .logo {
     margin-right: 1em;
-    width: 10%;
+    width: 5%;
     max-width: 100%;
     height: auto;
 }
-
 
 .nav {
     display: flex;
@@ -89,6 +88,10 @@ header {
     margin: 0 auto;
 }
 
+.nav__item {
+    margin-right: 1em;
+}
+
 .nav__item + .nav__item {
     margin-left: 1rem; 
 }
@@ -97,6 +100,7 @@ header {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
+    font-size: 1.125rem;
 }
 
 .nav__link--button {
@@ -111,13 +115,12 @@ header {
     width: 80%;
     max-width: 1600px;
     margin: 2em auto;
-    border: 3px solid white;
 }
-
 
 .row {
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
 }
 
 .col {
@@ -161,6 +164,25 @@ header {
     margin-left: 7.5rem;
     border-radius: 0.75rem;
     padding: 1em;
+}
+
+@media (max-width: 900px) {
+    .row {
+        display: block;
+    }
+
+    .hero__text, 
+    .hero__img,
+    .primary-content,
+    .sidebar {
+        width: 100%;
+    }
+
+    .hero__img {
+        margin-top: 2em;
+    }
+
+
 }
 
 
