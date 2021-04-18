@@ -1,7 +1,3 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
 :root {
   --green-color: rgb(27, 185, 61);
   --orange-color: rgb(238, 162, 20);
@@ -10,7 +6,14 @@
   --tealcgreen-color: #38cfd9;
   --smokewhite-color:  rgb(238, 235, 235);
   --darkpurple-color:  #87629a;
+  --darkgrey-color:  #59575a;
+
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 
 body {
     margin: 0;
@@ -32,6 +35,106 @@ h1 {
 h2 {
     color: #23424a;
     font-size: 2.25rem;
+}
+
+/* Navigation styles starts here */
+
+header {
+    background: var(--tealcgreen-color);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: cornsilk;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 8px;
+}
+
+.nav-toggle-label span::after {
+   top: 8px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--tealcgreen-color);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out; 
+}
+
+nav a:hover {
+    color: var(--darkgreen-color);
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+.logo {
+    max-width: 8%;
 }
 
 .btn {
@@ -56,71 +159,11 @@ h2 {
     0 0 0 10px  #38cfd9;
 }
 
-header {
-    background-color: var(--tealcgreen-color);
-    padding: 1em 0;
-}
-
-.logo {
-    margin-right: 1em;
-    width: 5%;
-    max-width: 100%;
-    height: auto;
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1; /*tillåter tillväxt*/
-    flex-shrink: 1; 
-}
-
-.nav__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    font-size: .9rem;
-}
-
-.nav__list--primary {
-    margin: 0 auto;
-}
-
-.nav__item {
-    margin-right: 1em;
-}
-
-.nav__item + .nav__item {
-    margin-left: 1rem; 
-}
-
-.nav__link {
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.125rem;
-}
-
-.nav__link--button {
-    background: white;
-    color: var(--darkgreen-color);
-    padding: .25em 1em;
-    border-radius: 10em;
-}
-
 .container {
     display: flex;
     width: 80%;
     max-width: 1600px;
     margin: 2em auto;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
 }
 
 .col {
@@ -166,22 +209,60 @@ header {
     padding: 1em;
 }
 
-@media (max-width: 900px) {
-    .row {
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr; /*space left-right logo(auto) */
+    }
+
+    .logo {
+        grid-column: 2 / 3;
+        min-width: 20%;
+
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
         display: block;
+        height: 5px;
+        background: black;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
     }
 
-    .hero__text, 
-    .hero__img,
-    .primary-content,
-    .sidebar {
-        width: 100%;
+    nav a:hover::before {
+        transform: scale(1, 1);
     }
-
-    .hero__img {
-        margin-top: 2em;
-    }
-
 
 }
 
